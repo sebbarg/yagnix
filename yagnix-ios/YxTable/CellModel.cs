@@ -14,19 +14,13 @@ namespace Yagnix.YxTable
     private AbstractCellFactory _factory;
     private AbstractCell<ModelType> _cell;
     private ModelType _model;
-    private Action<AbstractCell<ModelType>> _cellSelected;
-
-    public CellModel(AbstractCellFactory cellFactory, ModelType model) : this(cellFactory, model, null)
-    {
-    }
 
     //
 
-    public CellModel(AbstractCellFactory cellFactory, ModelType model, Action<AbstractCell<ModelType>> cellSelected)
+    public CellModel(AbstractCellFactory cellFactory, ModelType model)
     {
       _factory = cellFactory;
       _model = model;
-      _cellSelected = cellSelected;
     }
 
     //
@@ -38,7 +32,6 @@ namespace Yagnix.YxTable
       {
         _cell = (AbstractCell<ModelType>)_factory.Create();  
       }
-      _cell.CellSelected = _cellSelected;
       _cell.Model = _model;
       return _cell;
     }

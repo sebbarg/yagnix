@@ -8,8 +8,13 @@ namespace YxTableTest
   {
     public UISwitch Switch { get; }
     public Action<SwitchCell<ModelType>> Toggled { get; }
+    public Action<SwitchCell<ModelType>> CellSelected { get; }
 
-    public SwitchCell(string reuseId, bool initialState, Action<SwitchCell<ModelType>> toggled) : base(reuseId, UITableViewCellStyle.Default)
+    public SwitchCell(
+      string reuseId, 
+      bool initialState, 
+      Action<SwitchCell<ModelType>> cellSelected,
+      Action<SwitchCell<ModelType>> toggled) : base(reuseId, UITableViewCellStyle.Default)
     {
       SelectionStyle = UITableViewCellSelectionStyle.None;
 
@@ -18,6 +23,7 @@ namespace YxTableTest
 
       AccessoryView = Switch;
 
+      CellSelected = cellSelected;
       Toggled = toggled;
 
       Switch.ValueChanged += (sender, e) => {  
@@ -28,10 +34,23 @@ namespace YxTableTest
       };
     }
 
+    //
+
     protected override void Invalidate(ModelType model)
     {
       TextLabel.Text = model.Title;
     }
+
+    //
+
+    public override void SelectCell()
+    {
+      if ( CellSelected != null )
+      {
+        CellSelected(this);
+      }
+    }
+
   }
 }
 

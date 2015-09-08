@@ -25,17 +25,8 @@ namespace Yagnix.YxTable
 
     //
 
-    public Action<AbstractCell<ModelType>> CellSelected { get; set; }
-
-    //
-
     public virtual void SelectCell()
     {
-      var handler = CellSelected;
-      if ( handler != null )
-      {
-        handler(this);
-      }
     }
 
     //
