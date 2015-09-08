@@ -75,6 +75,13 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="UnitTestAppDelegate.cs" />
+    <Compile Include="UIViewExtensionsTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\yagnix-ios\yagnix-ios.csproj">
+      <Project>{83124577-9CBA-486F-968B-9471306406B8}</Project>
+      <Name>yagnix-ios</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

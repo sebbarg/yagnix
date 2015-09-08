@@ -14,7 +14,7 @@ namespace Yagnix
       UIResponder parentResponder = uiview;
 
       while ( parentResponder != null )
-        if ( typeof(UIViewController).IsAssignableFrom(parentResponder.GetType() ))
+        if ( parentResponder is UIViewController )
           return parentResponder as T;
         else
           parentResponder = parentResponder.NextResponder;
