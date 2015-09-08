@@ -9,18 +9,41 @@ namespace Yagnix.YxTable
     {
     }
 
-    public abstract void Update(ModelType model);
+    //
+
+    private ModelType _model;
+    public ModelType Model
+    { 
+      get {
+        return _model; 
+      }
+      set {
+        _model = value;
+        Invalidate(_model);
+      }
+    }
+
+    //
+
+    public Action<AbstractCell<ModelType>> CellSelected { get; set; }
+
+    //
 
     public virtual void SelectCell()
     {
       var handler = CellSelected;
       if ( handler != null )
       {
-        handler(this, EventArgs.Empty);
+        handler(this);
       }
     }
 
-    public event EventHandler CellSelected;
+    //
+
+    protected abstract void Invalidate(ModelType model);
+
+    //
+
   }
 }
 

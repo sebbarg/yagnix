@@ -5,10 +5,9 @@ using Yagnix.YxTable;
 
 namespace YxTableTest
 {
-  public class CustomCell1 : AbstractCell<IModel>
+  public class CustomCell1<ModelType> : AbstractCell<ModelType> where ModelType : ItemWithTitle
   {
     private readonly CustomCellView1 _customCellView;
-    ItemWithTitle _model;
 
     public CustomCell1(string reuseId) : base(reuseId, UITableViewCellStyle.Default)
     {
@@ -16,10 +15,9 @@ namespace YxTableTest
       ContentView.Add(_customCellView);
     }
 
-    public override void Update(IModel model)
+    protected override void Invalidate(ModelType model)
     {
-      _model = (ItemWithTitle)model;
-      _customCellView.Update(_model);
+      _customCellView.Update(model);
     }
 
     public override void LayoutSubviews()

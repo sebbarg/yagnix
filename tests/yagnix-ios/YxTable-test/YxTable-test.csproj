@@ -78,7 +78,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="YxTableController.cs" />
-    <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\ItemWithTitle.cs" />
     <Compile Include="Models\ItemWithTitleAndSubtitle.cs" />
     <Compile Include="Factories\DefaultCellFactory.cs" />

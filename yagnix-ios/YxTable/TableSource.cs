@@ -5,9 +5,9 @@ using Foundation;
 
 namespace Yagnix.YxTable
 {
-  public class TableSource<ModelType> : UITableViewSource 
+  public class TableSource : UITableViewSource 
   {
-    public List<Section<ModelType>> Sections { get; } = new List<Section<ModelType>>(); 
+    public List<Section> Sections { get; } = new List<Section>(); 
 
     //
 
@@ -48,7 +48,7 @@ namespace Yagnix.YxTable
     public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
     {
       var cellModel = Sections[indexPath.Section].Cells[indexPath.Row];
-      cellModel.Cell.SelectCell();  
+      cellModel.RowSelected();  
       tableView.DeselectRow(indexPath, true); // iOS convention is to remove the highlight
     }
   }

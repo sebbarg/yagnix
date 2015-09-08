@@ -7,7 +7,7 @@ namespace YxTableTest
   {
     public override UITableViewCell Create()
     {
-      return new CustomCell1(ReuseId);
+      return new CustomCell1<ItemWithTitle>(ReuseId);
     }
   }
 }

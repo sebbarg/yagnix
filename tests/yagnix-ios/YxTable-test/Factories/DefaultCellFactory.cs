@@ -6,8 +6,8 @@ namespace YxTableTest
   public class DefaultCellFactory : AbstractCellFactory
   {
     public override UITableViewCell Create()  
-    {
-      return new DefaultCell(ReuseId);
+    {   
+      return new DefaultCell<ItemWithTitle>(ReuseId);
     }
   }
 }

@@ -3,19 +3,18 @@ using Yagnix.YxTable;
 
 namespace YxTableTest
 {
-  public class DefaultCell : AbstractCell<IModel>
+  public class DefaultCell<ModelType> : AbstractCell<ModelType> where ModelType : ItemWithTitle
   {
-    ItemWithTitle _model;
 
     public DefaultCell(string reuseId) : base(reuseId, UITableViewCellStyle.Default)
     {
     }
 
-    public override void Update(IModel model)
+    protected override void Invalidate(ModelType model)
     {
-      _model = (ItemWithTitle)model;
-      TextLabel.Text = _model.Title;
+      TextLabel.Text = model.Title;
     }
+
   }
 }
 

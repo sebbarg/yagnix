@@ -3,20 +3,17 @@ using Yagnix.YxTable;
 
 namespace YxTableTest
 {
-  public class SubtitleCell : AbstractCell<IModel>
+  public class SubtitleCell<ModelType> : AbstractCell<ModelType> where ModelType : ItemWithTitleAndSubtitle
   {
-    ItemWithTitleAndSubtitle _model;
-
     public SubtitleCell(string reuseId) : base(reuseId, UITableViewCellStyle.Subtitle)
     {
       Accessory = UITableViewCellAccessory.Checkmark;
     }
 
-    public override void Update(IModel model)
+    protected override void Invalidate(ModelType model)
     {
-      _model = (ItemWithTitleAndSubtitle)model;
-      TextLabel.Text = _model.Title;
-      DetailTextLabel.Text = _model.SubTitle;
+      TextLabel.Text = model.Title;
+      DetailTextLabel.Text = model.SubTitle;
     }
   }
 }

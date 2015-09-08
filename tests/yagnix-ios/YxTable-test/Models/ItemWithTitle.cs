@@ -1,6 +1,6 @@
 ﻿namespace YxTableTest
 {
-  public class ItemWithTitle : IModel
+  public class ItemWithTitle
   {
     public string Title { get; set; }
   }
