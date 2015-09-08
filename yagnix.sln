@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yagnix-ios", "yagnix-ios\yagnix-ios.csproj", "{83124577-9CBA-486F-968B-9471306406B8}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "shared", "shared\shared.shproj", "{FF75705E-149A-4EFA-B899-90CE5EB9D637}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B4F46091-D6A3-49A2-AF87-E1954EC9E6D4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{EEAE4937-0D5E-417A-B05F-A7F99E609E81}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "yagnix-shared", "yagnix-shared", "{EEAE4937-0D5E-417A-B05F-A7F99E609E81}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "yagnix-ios", "yagnix-ios", "{C73FE6E4-EA02-46FD-99D9-B7898AE53012}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unittest", "tests\yagnix-ios\unittest\unittest.csproj", "{99E2F41C-820D-4902-A582-634C729BA0ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YxTable-test", "tests\yagnix-ios\YxTable-test\YxTable-test.csproj", "{47DF31BE-4E34-47F2-A1DD-B4DD22CD1FC0}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "yagnix-shared", "yagnix-shared\yagnix-shared.shproj", "{4E89A36F-0576-4B7C-8AA6-3BE8F9DDA1DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

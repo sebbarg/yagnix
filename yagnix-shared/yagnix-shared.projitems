@@ -3,7 +3,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>{EB8D4491-AAFB-4019-B1A4-F2DFA1D88563}</SharedGUID>
+    <SharedGUID>{4E89A36F-0576-4B7C-8AA6-3BE8F9DDA1DB}</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>Yagnix</Import_RootNamespace>
