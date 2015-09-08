@@ -6,6 +6,7 @@ namespace Yagnix.YxTable
   public class CellModel<ModelType>
   {
     public AbstractCellFactory Factory { get; }
+    public AbstractCell<ModelType> Cell { get; private set; }
     public ModelType Model { get; }
 
     public CellModel(AbstractCellFactory cellFactory, ModelType model)
@@ -16,13 +17,13 @@ namespace Yagnix.YxTable
 
     public UITableViewCell GetCell(UITableView tableView)
     {
-      AbstractCell<ModelType> cell = (AbstractCell<ModelType>)tableView.DequeueReusableCell(Factory.ReuseId);
-      if ( cell == null )
+      Cell = (AbstractCell<ModelType>)tableView.DequeueReusableCell(Factory.ReuseId);
+      if ( Cell == null )
       {
-        cell = (AbstractCell<ModelType>)Factory.Create();  
+        Cell = (AbstractCell<ModelType>)Factory.Create();  
       }
-      cell.Update(Model);
-      return cell;
+      Cell.Update(Model);
+      return Cell;
     }
   }
 }

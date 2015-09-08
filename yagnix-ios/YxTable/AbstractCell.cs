@@ -10,6 +10,17 @@ namespace Yagnix.YxTable
     }
 
     public abstract void Update(ModelType model);
+
+    public virtual void SelectCell()
+    {
+      var handler = CellSelected;
+      if ( handler != null )
+      {
+        handler(this, EventArgs.Empty);
+      }
+    }
+
+    public event EventHandler CellSelected;
   }
 }
 

@@ -8,11 +8,11 @@ namespace Yagnix.YxTable
     public string Header { get; set; }
     public string Footer { get; set; }
 
-    public List<CellModel<ModelType>> Items { get; private set; }
+    public List<CellModel<ModelType>> Cells { get; private set; }
 
     public Section()
     {
-      Items = new List<CellModel<ModelType>>();
+      Cells = new List<CellModel<ModelType>>();
     }
   }
 }
