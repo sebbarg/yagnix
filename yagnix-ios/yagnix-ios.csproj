@@ -45,6 +45,7 @@
     <Compile Include="YxTable\AbstractCell.cs" />
     <Compile Include="YxTable\Section.cs" />
     <Compile Include="UIViewExtensions.cs" />
+    <Compile Include="MsgBox.cs" />
   </ItemGroup>
   <Import Project="..\yagnix-shared\yagnix-shared.projitems" Label="Shared" Condition="Exists('..\yagnix-shared\yagnix-shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

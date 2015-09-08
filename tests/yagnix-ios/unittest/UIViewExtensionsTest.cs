@@ -24,8 +24,6 @@ namespace unittest
       Assert.IsTrue(view1.ParentController() == controller);
       Assert.IsTrue(view2.ParentController() == controller);
     }
-
-    
   }
 
 }
