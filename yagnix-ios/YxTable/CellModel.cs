@@ -9,42 +9,46 @@ namespace Yagnix.YxTable
     public abstract void RowSelected();
   }
 
-  public class CellModel<ModelType> : CellModel
+  public sealed class CellModel<ModelType> : CellModel
   {
-    public AbstractCellFactory Factory { get; }
-    public AbstractCell<ModelType> Cell { get; private set; }
-    public ModelType Model { get; }
-    public Action<AbstractCell<ModelType>> CellSelected { get; private set; }
+    private AbstractCellFactory _factory;
+    private AbstractCell<ModelType> _cell;
+    private ModelType _model;
+    private Action<AbstractCell<ModelType>> _cellSelected;
 
     public CellModel(AbstractCellFactory cellFactory, ModelType model) : this(cellFactory, model, null)
     {
     }
 
+    //
+
     public CellModel(AbstractCellFactory cellFactory, ModelType model, Action<AbstractCell<ModelType>> cellSelected)
     {
-      Factory = cellFactory;
-      Model = model;
-      CellSelected = cellSelected;
+      _factory = cellFactory;
+      _model = model;
+      _cellSelected = cellSelected;
     }
+
+    //
 
     public override UITableViewCell GetCell(UITableView tableView)
     {
-      Cell = (AbstractCell<ModelType>)tableView.DequeueReusableCell(Factory.ReuseId);
-      if ( Cell == null )
+      _cell = (AbstractCell<ModelType>)tableView.DequeueReusableCell(_factory.ReuseId);
+      if ( _cell == null )
       {
-        Cell = (AbstractCell<ModelType>)Factory.Create();  
+        _cell = (AbstractCell<ModelType>)_factory.Create();  
       }
-      Cell.CellSelected = CellSelected;
-      Cell.Model = Model;
-      return Cell;
+      _cell.CellSelected = _cellSelected;
+      _cell.Model = _model;
+      return _cell;
     }
+
+    //
 
     public override void RowSelected()
     {
-      Cell.SelectCell();
+      _cell.SelectCell();
     }
-
-
   }
 }
 

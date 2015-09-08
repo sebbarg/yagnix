@@ -45,16 +45,18 @@ namespace YxTableTest
       section.Header = "Default cell";
       section.Footer = "---";
 
+      var defaultCellFactory = new DefaultCellFactory();
+
       section.Cells.Add(
         new CellModel<ItemWithTitle>(
-          Singleton<DefaultCellFactory>._, 
+          defaultCellFactory, 
           new ItemWithTitle { Title = "foo" },
           (cell) => MsgBox.Show("Hopla", cell.Model.Title, new [] {"OK"})
         ));
 
       section.Cells.Add(
         new CellModel<ItemWithTitle>(
-          Singleton<DefaultCellFactory>._, 
+          defaultCellFactory, 
           new ItemWithTitle { Title = "bar" },
           onCellSelect
         ));
@@ -78,6 +80,33 @@ namespace YxTableTest
           Singleton<SubtitleCellFactory>._, 
           new ItemWithTitleAndSubtitle { Title = "def", SubTitle = "456" },
           (cell) => MsgBox.Show(cell.Model.Title, cell.Model.SubTitle, new [] {"OK"})
+        ));
+
+      source.Sections.Add(section);
+
+      // -----------------------
+
+      section = new Section();
+      section.Header = "Switch cell";
+
+      var switchCellFactory1 = new SwitchCellFactory { InitialState = true };
+      var switchCellFactory2 = new SwitchCellFactory { 
+        InitialState = false,
+        Toggled = (cell) => MsgBox.Show(cell.Model.Title, "Switched toggled", new [] {"OK"})
+      };
+
+      section.Cells.Add(
+        new CellModel<ItemWithTitle>(
+          switchCellFactory1, 
+          new ItemWithTitle { Title = "foo" },
+          (cell) => MsgBox.Show("Hopla", cell.Model.Title, new [] {"OK"})
+        ));
+
+      section.Cells.Add(
+        new CellModel<ItemWithTitle>(
+          switchCellFactory2, 
+          new ItemWithTitle { Title = "bar" },
+          onCellSelect
         ));
 
       source.Sections.Add(section);

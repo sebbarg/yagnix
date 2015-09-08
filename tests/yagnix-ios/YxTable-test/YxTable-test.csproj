@@ -88,6 +88,8 @@
     <Compile Include="Cells\SubtitleCell.cs" />
     <Compile Include="Cells\CustomCell1.cs" />
     <Compile Include="Cells\CustomCell2.cs" />
+    <Compile Include="Factories\SwitchCellFactory.cs" />
+    <Compile Include="Cells\SwitchCell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
