@@ -31,7 +31,6 @@ namespace YxTableTest
 
       _view.FitToParent(0);
 
-
       var source = new TableSource();
 
       Section section;

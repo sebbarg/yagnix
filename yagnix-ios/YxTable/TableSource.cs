@@ -7,7 +7,22 @@ namespace Yagnix.YxTable
 {
   public class TableSource : UITableViewSource 
   {
-    public List<Section> Sections { get; } = new List<Section>(); 
+    public List<Section> Sections { get; }
+
+    //
+
+    public TableSource()
+    {
+      Sections = new List<Section>(); 
+    }
+
+    //
+
+    public TableSource(Section section)
+    {
+      Sections = new List<Section>();
+      Sections.Add(section);
+    }
 
     //
 
@@ -51,6 +66,7 @@ namespace Yagnix.YxTable
       cellModel.RowSelected();  
       tableView.DeselectRow(indexPath, true); // iOS convention is to remove the highlight
     }
+
   }
 }
 
