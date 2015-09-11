@@ -2,6 +2,7 @@
 using CoreGraphics;
 using CoreText;
 using Foundation;
+using Yagnix;
 using Yagnix.YxTable;
 
 namespace YxTableTest
@@ -14,18 +15,12 @@ namespace YxTableTest
     {
       _customCellView = new CustomCellView2();
       ContentView.Add(_customCellView);
+      _customCellView.FitToMargin();
     }
 
     protected override void Invalidate(ModelType model)
     {
       _customCellView.Update(model);
-    }
-
-    public override void LayoutSubviews()
-    {
-      base.LayoutSubviews();
-      _customCellView.Frame = ContentView.Bounds;
-      _customCellView.SetNeedsDisplay();
     }
   }
 

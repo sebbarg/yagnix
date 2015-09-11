@@ -29,7 +29,11 @@ namespace YxTableTest
       _view = new UITableView(new CGRect(), UITableViewStyle.Grouped);
       View.Add(_view);
 
-      _view.FitToParent(0);
+      //_view.SeparatorInset = UIEdgeInsets.Zero;
+      //_view.LayoutMargins = UIEdgeInsets.Zero;
+      //_view.SeparatorStyle = UITableViewCellSeparatorStyle.DoubleLineEtched;
+
+      _view.FitToParent();
 
       var source = new TableSource();
 
@@ -145,6 +149,22 @@ namespace YxTableTest
 
       _view.Source = source;
     }
+
+    public override void ViewWillAppear(bool animated)
+    {
+      base.ViewWillAppear(animated);
+      //NavigationController.ToolbarHidden = true;
+    }
+
+    public override void ViewDidLayoutSubviews()
+    {
+      base.ViewDidLayoutSubviews();
+      //View.LayoutMargins = new UIEdgeInsets(80, 80, 80, 80);
+    }
+
+
   }
+
+
 }
 

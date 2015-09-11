@@ -1,4 +1,5 @@
 ﻿using UIKit;
+using Yagnix;
 using Yagnix.YxTable;
 
 namespace YxTableTest
@@ -8,6 +9,8 @@ namespace YxTableTest
 
     public DefaultCell(string reuseId) : base(reuseId, UITableViewCellStyle.Default)
     {
+      //this.LayoutMargins = UIEdgeInsets.Zero;
+      //this.SeparatorInset = UIEdgeInsets.Zero;
     }
 
     protected override void Invalidate(ModelType model)

@@ -13,18 +13,14 @@ namespace YxTableTest
     {
       _customCellView = new CustomCellView1();
       ContentView.Add(_customCellView);
+      _customCellView.FitToMargin();
+
+      //ContentView.BackgroundColor = UIColor.Blue;
     }
 
     protected override void Invalidate(ModelType model)
     {
       _customCellView.Update(model);
-    }
-
-    public override void LayoutSubviews()
-    {
-      base.LayoutSubviews();
-      _customCellView.Frame = ContentView.Bounds;
-      _customCellView.SetNeedsDisplay();
     }
   }
 
@@ -44,10 +40,10 @@ namespace YxTableTest
       Add(_usernameField);
 
       _usernameField
-        .Anchor(NSLayoutAttribute.Top, this, NSLayoutAttribute.Top, 10)
-        .Anchor(NSLayoutAttribute.Left, this, NSLayoutAttribute.Left, 10)
-        .Anchor(NSLayoutAttribute.Bottom, this, NSLayoutAttribute.Bottom, -10)
-        .Anchor(NSLayoutAttribute.Right, this, NSLayoutAttribute.Right, -10);
+        .Anchor(NSLayoutAttribute.Top, this, NSLayoutAttribute.Top, 0)
+        .Anchor(NSLayoutAttribute.Left, this, NSLayoutAttribute.Left, 0)
+        .Anchor(NSLayoutAttribute.Bottom, this, NSLayoutAttribute.Bottom, 0)
+        .Anchor(NSLayoutAttribute.Right, this, NSLayoutAttribute.Right, 0);
     }
 
     public void Update(ItemWithTitle model)

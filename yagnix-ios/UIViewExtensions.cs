@@ -158,6 +158,24 @@ namespace Yagnix
 
     //
 
+    public static UIView FitToParent(this UIView thisControl)
+    {
+      return FitToParent(thisControl, 0);
+    }
+
+    //
+
+    public static UIView FitToMargin(this UIView thisControl)
+    {
+      return thisControl
+        .Anchor(NSLayoutAttribute.Top, thisControl.Superview, NSLayoutAttribute.TopMargin, 0)
+        .Anchor(NSLayoutAttribute.Left, thisControl.Superview, NSLayoutAttribute.LeftMargin, 0)
+        .Anchor(NSLayoutAttribute.Right, thisControl.Superview, NSLayoutAttribute.RightMargin, 0)
+        .Anchor(NSLayoutAttribute.Bottom, thisControl.Superview, NSLayoutAttribute.BottomMargin, 0);
+    }
+
+    //
+
     public static UIView FitToGuides(this UIView thisControl, UIViewController controller, nfloat offset)
     {
       return thisControl
@@ -165,13 +183,6 @@ namespace Yagnix
         .Anchor(NSLayoutAttribute.Left, thisControl.Superview, NSLayoutAttribute.Left, +offset)
         .Anchor(NSLayoutAttribute.Right, thisControl.Superview, NSLayoutAttribute.Right, -offset)
         .Anchor(NSLayoutAttribute.Bottom, controller.BottomLayoutGuide, NSLayoutAttribute.Top, -offset);
-    }
-
-    //
-
-    public static UIView FitToParent(this UIView thisControl)
-    {
-      return FitToParent(thisControl, 0);
     }
 
     //
