@@ -74,7 +74,7 @@ namespace Yagnix
 
     //
 
-    public static UIView Layout(
+    public static NSLayoutConstraint LayoutConstraint(
       this UIView thisControl, 
       INativeObject otherControl, 
       NSLayoutAttribute thisAttribute, 
@@ -88,7 +88,7 @@ namespace Yagnix
 
       System.Diagnostics.Debug.Assert(thisControl.Superview != null);
 
-      thisControl.Superview.AddConstraint(
+      var constraint = 
         NSLayoutConstraint.Create(
           thisControl, 
           thisAttribute,                
@@ -96,8 +96,23 @@ namespace Yagnix
           otherControl, 
           otherAttribute,               
           1, 
-          constant));
+          constant);
 
+      thisControl.Superview.AddConstraint(constraint);
+
+      return constraint;
+    }
+
+    //
+
+    public static UIView Layout(
+      this UIView thisControl, 
+      INativeObject otherControl, 
+      NSLayoutAttribute thisAttribute, 
+      NSLayoutAttribute otherAttribute, 
+      nfloat constant)
+    {
+      LayoutConstraint(thisControl, otherControl, thisAttribute, otherAttribute, constant);
       return thisControl;
     }
 
@@ -143,6 +158,50 @@ namespace Yagnix
       NSLayoutAttribute otherSide)
     {
       return Anchor(thisControl, side, otherControl, otherSide, 0);
+    }
+
+    //
+
+    public static NSLayoutConstraint LayoutConstraint(
+      this UIView thisControl, 
+      INativeObject otherControl, 
+      NSLayoutAttribute thisAttribute, 
+      NSLayoutAttribute otherAttribute)
+    {
+      return LayoutConstraint(thisControl, otherControl, thisAttribute, otherAttribute, 0);
+    }
+
+    //
+
+    public static NSLayoutConstraint LayoutConstraint(
+      this UIView thisControl, 
+      NSLayoutAttribute layout, 
+      nfloat size)
+    {
+      return LayoutConstraint(thisControl, null, layout, NSLayoutAttribute.NoAttribute, size);
+    }
+
+    //
+
+    public static NSLayoutConstraint AnchorConstraint(
+      this UIView thisControl, 
+      NSLayoutAttribute side, 
+      INativeObject otherControl, 
+      NSLayoutAttribute otherSide, 
+      nfloat offset)
+    {
+      return LayoutConstraint(thisControl, otherControl, side, otherSide, offset);
+    }
+
+    //
+
+    public static NSLayoutConstraint AnchorConstraint(
+      this UIView thisControl, 
+      NSLayoutAttribute side, 
+      INativeObject otherControl, 
+      NSLayoutAttribute otherSide)
+    {
+      return AnchorConstraint(thisControl, side, otherControl, otherSide, 0);
     }
 
     //

@@ -95,7 +95,7 @@ namespace fonttest
       section.Header = font.Name;
 
       fontModel = new FontModel {
-        Text = $"{font.PointSize} the quick brown fox jumps over the lazy dog",
+        Text = $"{font.PointSize} default label font w/ size",
         Font = font
       };
       section.Cells.Add(new CellModel<FontModel>(cellFactory, fontModel));
