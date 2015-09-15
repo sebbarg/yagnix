@@ -31,7 +31,7 @@ namespace YxTableTest
 
       //_view.SeparatorInset = UIEdgeInsets.Zero;
       //_view.LayoutMargins = UIEdgeInsets.Zero;
-      //_view.SeparatorStyle = UITableViewCellSeparatorStyle.DoubleLineEtched;
+      //_view.SeparatorStyle = UITableViewCellSeparatorStyle.None;
 
       _view.FitToParent();
 

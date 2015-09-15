@@ -50,7 +50,7 @@ namespace Yagnix.YxTable
       return Sections[(int)section].Footer;
     }
 
-    //
+    //  
 
     public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
     {
@@ -66,6 +66,8 @@ namespace Yagnix.YxTable
       cellModel.RowSelected();  
       tableView.DeselectRow(indexPath, true); // iOS convention is to remove the highlight
     }
+
+    //
 
   }
 }

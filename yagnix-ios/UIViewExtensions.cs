@@ -267,7 +267,7 @@ namespace Yagnix
     #region border
 
     [Flags]
-    public enum BorderKind { Left = 1, Top = 2, Right = 4, Bottom = 8 };
+    public enum BorderKind { Left = 1, Top = 2, Right = 4, Bottom = 8, All = 15 };
     private static readonly UIColor BorderDefaultColor = UIColor.FromRGB(200, 200, 200);
     private static readonly nfloat BorderDefaultSize = 0.5f;
     public static void Border(this UIView view, BorderKind kind, UIColor color, nfloat size)
