@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YxTable-test", "tests\yagni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "font-test", "tests\yagnix-ios\font-test\font-test.csproj", "{309B0B26-A9C3-4D93-9DB6-182908281360}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YxGestures-test", "tests\yagnix-ios\YxGestures-test\YxGestures-test.csproj", "{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}"
+EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "yagnix-shared", "yagnix-shared\yagnix-shared.shproj", "{4E89A36F-0576-4B7C-8AA6-3BE8F9DDA1DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yagnix-android", "yagnix-android\yagnix-android.csproj", "{783DE951-638B-41B2-B2FF-6466FB9A1A6B}"
@@ -89,6 +91,18 @@ Global
 		{99E2F41C-820D-4902-A582-634C729BA0ED}.Release|iPhone.Build.0 = Release|iPhone
 		{99E2F41C-820D-4902-A582-634C729BA0ED}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{99E2F41C-820D-4902-A582-634C729BA0ED}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Debug|iPhone.Build.0 = Debug|iPhone
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Release|Any CPU.Build.0 = Release|iPhone
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Release|iPhone.ActiveCfg = Release|iPhone
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Release|iPhone.Build.0 = Release|iPhone
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EEAE4937-0D5E-417A-B05F-A7F99E609E81} = {B4F46091-D6A3-49A2-AF87-E1954EC9E6D4}
@@ -96,6 +110,7 @@ Global
 		{99E2F41C-820D-4902-A582-634C729BA0ED} = {C73FE6E4-EA02-46FD-99D9-B7898AE53012}
 		{47DF31BE-4E34-47F2-A1DD-B4DD22CD1FC0} = {C73FE6E4-EA02-46FD-99D9-B7898AE53012}
 		{309B0B26-A9C3-4D93-9DB6-182908281360} = {C73FE6E4-EA02-46FD-99D9-B7898AE53012}
+		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB} = {C73FE6E4-EA02-46FD-99D9-B7898AE53012}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
