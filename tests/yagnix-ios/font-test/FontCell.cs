@@ -40,25 +40,5 @@ namespace fonttest
 
   //
 
-  public class FontTableSource : TableSource
-  {
-    public FontTableSource() : base()
-    {
-    }
-
-    public FontTableSource(Section section) : base(section)
-    {
-    }
-
-    public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
-    {
-      var cellModel = Sections[indexPath.Section].Cells[indexPath.Row];
-      var cell = cellModel.GetCell(tableView);
-
-      return cell.SystemLayoutSizeFittingSize(UIView.UILayoutFittingCompressedSize).Height;
-    }
-  }
-
-
 }
 

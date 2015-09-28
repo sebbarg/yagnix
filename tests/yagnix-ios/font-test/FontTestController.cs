@@ -28,9 +28,12 @@ namespace fonttest
 
       _view.FitToParent();
 
+      _view.RowHeight = UITableView.AutomaticDimension;
+      _view.EstimatedRowHeight = 100;
+
       var cellFactory = new FontCellFactory();
 
-      var source = new FontTableSource();
+      var source = new TableSource();
       _view.Source = source;
 
       Section section;

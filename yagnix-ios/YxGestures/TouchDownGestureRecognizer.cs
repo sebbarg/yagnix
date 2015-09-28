@@ -64,6 +64,7 @@ namespace Yagnix.YxGestures
       State = UIGestureRecognizerState.Failed;
     }
 
+
     //
   }
 }
