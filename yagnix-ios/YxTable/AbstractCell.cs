@@ -31,6 +31,14 @@ namespace Yagnix.YxTable
 
     //
 
+    public void ZeroMargins()
+    {
+      LayoutMargins = UIEdgeInsets.Zero;
+      SeparatorInset = UIEdgeInsets.Zero;
+    }
+
+    //
+
     protected abstract void Invalidate(ModelType model);
 
     //
