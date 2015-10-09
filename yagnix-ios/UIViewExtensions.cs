@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UIKit;
 using CoreGraphics;
 using Foundation;
@@ -260,6 +261,20 @@ namespace Yagnix
 
       view.Superview.AddConstraint(result);
       return result;
+    }
+
+    //
+
+    public static void RemoveConstraints(this UIView view)
+    {
+      var superView = view.Superview;
+      if ( superView != null )
+      {
+        var subviews = superView.Subviews;
+        var index = Array.FindIndex(subviews, item => item == view);
+        view.RemoveFromSuperview();
+        superView.InsertSubview(view, index);
+      }
     }
 
     //
