@@ -72,11 +72,6 @@ namespace YxTableTest
           new ItemWithTitleAndSubtitle { Title = "abc", SubTitle = "123" }
         ));
 
-      section.Cells.Add(
-        new CellModel<ItemWithTitleAndSubtitle>(
-          Singleton<SubtitleCellFactory>._, 
-          new ItemWithTitleAndSubtitle { Title = "def", SubTitle = "456" }
-        ));
 
       source.Sections.Add(section);
 
@@ -85,11 +80,18 @@ namespace YxTableTest
       section = new Section();
       section.Header = "Switch cell";
 
+      var changingModel = new ItemWithTitle { Title = "This will change when switch is toggled" };
+      var changingCell = new CellModel<ItemWithTitle>(defaultCellFactory, changingModel);
+      section.Cells.Add( changingCell );
+
       var switchCellFactory1 = new SwitchCellFactory { InitialState = true };
       var switchCellFactory2 = new SwitchCellFactory { 
         InitialState = false,
         CellSelected = (cell) => MsgBox.Show(cell.Model.Title, "Cell selected", new [] {"OK"}),
-        Toggled = (cell) => MsgBox.Show(cell.Model.Title, "Switch toggled", new [] {"OK"})
+        Toggled = (cell) => { 
+          changingCell.Model.Title = "You changed me!";
+          _view.ReloadCellModel(changingCell);
+        }
       };
 
       section.Cells.Add(
@@ -101,7 +103,7 @@ namespace YxTableTest
       section.Cells.Add(
         new CellModel<ItemWithTitle>(
           switchCellFactory2, 
-          new ItemWithTitle { Title = "bar" }
+          new ItemWithTitle { Title = "Toggling this will change above text. Hopafully." }
         ));
 
       source.Sections.Add(section);

@@ -14,6 +14,18 @@ namespace Yagnix.YxTable
         table.CellLayoutMarginsFollowReadableWidth = false;
       }
     }
+
+    //
+
+    public static void ReloadCellModel(this UITableView table, CellModel cellModel)
+    {
+      var path = cellModel.Path();
+      if ( path != null )
+      {
+        table.ReloadRows(new [] { path }, UITableViewRowAnimation.Automatic);
+      }
+    }
+
   }
 }
 

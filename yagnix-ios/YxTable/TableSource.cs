@@ -55,7 +55,7 @@ namespace Yagnix.YxTable
     public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
     {
       var cellModel = Sections[indexPath.Section].Cells[indexPath.Row];
-      return cellModel.GetCell(tableView);
+      return cellModel.GetCell(tableView, indexPath.Section, indexPath.Row);
     }
 
     //
