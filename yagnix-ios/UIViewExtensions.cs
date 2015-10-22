@@ -41,6 +41,16 @@ namespace Yagnix
 
     //
 
+    public static UIButton AddButton(this UIView view) 
+    {
+      var button = new UIButton(UIButtonType.System);
+      view.Add(button);
+      return button;
+    }
+
+
+    //
+
     //    public static CGRect SizeToSubviews(this UIView view)
     //    {
     //      var w = view.Frame.Width;
