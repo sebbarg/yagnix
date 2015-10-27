@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YxGestures-test", "tests\ya
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "table-margins", "tests\yagnix-ios\table-margins\table-margins.csproj", "{AEEB88A2-F3F1-4438-8646-CD109BC92ECB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YxContainer-test", "tests\yagnix-ios\YxContainer-test\YxContainer-test.csproj", "{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}"
+EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "yagnix-shared", "yagnix-shared\yagnix-shared.shproj", "{4E89A36F-0576-4B7C-8AA6-3BE8F9DDA1DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yagnix-android", "yagnix-android\yagnix-android.csproj", "{783DE951-638B-41B2-B2FF-6466FB9A1A6B}"
@@ -69,6 +71,18 @@ Global
 		{783DE951-638B-41B2-B2FF-6466FB9A1A6B}.Release|iPhone.Build.0 = Release|Any CPU
 		{783DE951-638B-41B2-B2FF-6466FB9A1A6B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{783DE951-638B-41B2-B2FF-6466FB9A1A6B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Debug|iPhone.Build.0 = Debug|iPhone
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Release|Any CPU.Build.0 = Release|iPhone
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Release|iPhone.ActiveCfg = Release|iPhone
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Release|iPhone.Build.0 = Release|iPhone
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{83124577-9CBA-486F-968B-9471306406B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{83124577-9CBA-486F-968B-9471306406B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83124577-9CBA-486F-968B-9471306406B8}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -126,6 +140,7 @@ Global
 		{309B0B26-A9C3-4D93-9DB6-182908281360} = {C73FE6E4-EA02-46FD-99D9-B7898AE53012}
 		{D6BE4CCC-5A86-420A-8042-5AD54A698EDB} = {C73FE6E4-EA02-46FD-99D9-B7898AE53012}
 		{AEEB88A2-F3F1-4438-8646-CD109BC92ECB} = {C73FE6E4-EA02-46FD-99D9-B7898AE53012}
+		{7F1C3197-6BB7-4EDE-85C0-0CE60D1AFBA6} = {C73FE6E4-EA02-46FD-99D9-B7898AE53012}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
