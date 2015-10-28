@@ -56,9 +56,18 @@ namespace Yagnix.YxContainer
 
     public UIView Content 
     { 
+      get {
+        if ( _content.Subviews.Length > 0 )
+          return _content.Subviews[0];
+        else
+          return null;
+      }
       set {
-        _content.Add(value);
-        value.FitToParent();
+        if ( _content.Subviews.Length == 0 )
+        {
+          _content.Add(value);
+          value.FitToParent();
+        }
       }
     }
 
