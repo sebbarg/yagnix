@@ -26,6 +26,11 @@ namespace Yagnix.YxTable
 
     //
 
+    public UIColor HeaderBackgroundColor { get; set; }
+    public UIColor FooterBackgroundColor { get; set; }
+
+    //
+
     public override nint NumberOfSections(UITableView tableView)
     {
       return Sections.Count;
@@ -68,6 +73,25 @@ namespace Yagnix.YxTable
     }
 
     //
+
+    public override void WillDisplayHeaderView(UITableView tableView, UIView headerView, nint section)
+    {
+      if ( HeaderBackgroundColor != null && headerView is UITableViewHeaderFooterView )
+      {
+        var v = (UITableViewHeaderFooterView)headerView;
+        v.ContentView.BackgroundColor = HeaderBackgroundColor;
+      }
+    }
+
+    public override void WillDisplayFooterView(UITableView tableView, UIView footerView, nint section)
+    {
+      if ( FooterBackgroundColor != null && footerView is UITableViewHeaderFooterView )
+      {
+        var v = (UITableViewHeaderFooterView)footerView;
+        v.ContentView.BackgroundColor = FooterBackgroundColor;
+      }
+    }
+
 
   }
 }

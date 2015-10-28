@@ -55,6 +55,7 @@
     <Compile Include="YxTable\UITableViewExtensions.cs" />
     <Compile Include="YxContainer\Container.cs" />
     <Compile Include="YxContainer\Header.cs" />
+    <Compile Include="YxTable\Table.cs" />
   </ItemGroup>
   <Import Project="..\yagnix-shared\yagnix-shared.projitems" Label="Shared" Condition="Exists('..\yagnix-shared\yagnix-shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
